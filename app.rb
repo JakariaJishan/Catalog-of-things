@@ -29,9 +29,9 @@ class App
     when 4
       list_labels
     when 5
-      create_rental
+      add_book
     when 6
-      list_rentals
+      add_album
     when 7
       puts 'Thank you for using this app!'
     else
@@ -43,9 +43,6 @@ class App
   # rubocop:enable Metrics/CyclomaticComplexity
 
   def start
-    load_books
-    load_people
-    load_rentals
     options
     choice = gets.chomp.to_i
     choose_an_option(choice)
