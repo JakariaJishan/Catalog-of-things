@@ -1,11 +1,9 @@
 class App
-
   def initialize
     @books = []
     @albums = []
     @genres = []
     @labels = []
-
   end
 
   def options

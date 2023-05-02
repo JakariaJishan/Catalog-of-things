@@ -8,7 +8,7 @@ describe Genre do
 
   describe '#new' do
     it 'returns a Genre object' do
-      expect(genre).to be_an_instance_of(Genre)      
+      expect(genre).to be_an_instance_of(Genre)
     end
   end
 
