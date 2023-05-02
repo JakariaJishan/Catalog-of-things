@@ -10,9 +10,11 @@ class MusicAlbum < Item
 
   private
 
+  # rubocop:disable Lint/UselessAssignment
   def can_be_archived?
-    return true if super && on_spotify = 1 
+    return true if super && (on_spotify = 1)
 
     false
   end
+  # rubocop:enable Lint/UselessAssignment
 end
