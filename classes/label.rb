@@ -9,6 +9,8 @@ class Label
   end
 
   def add_item(item)
+    return if @items.include?(item)
+
     item.label = self
     @items << item
   end

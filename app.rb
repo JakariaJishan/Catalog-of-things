@@ -31,13 +31,13 @@ class App
   def choose_an_option(choice)
     case choice
     when 1
-      list_books
+      list_all_books
     when 2
       list_music_albums
     when 3
       list_genres
     when 4
-      list_labels
+      list_all_labels
     when 5
       add_book
     when 6
