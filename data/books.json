@@ -1,16 +1,34 @@
 [
   {
-    "id": 576,
-    "publisher": "ads",
-    "publish_date": "23",
-    "cover_state": "good",
-    "genre": "ads"
+    "id": 562,
+    "publisher": "d",
+    "publish_date": "d",
+    "cover_state": "d",
+    "label_title": "d",
+    "label_color": "d"
   },
   {
-    "id": 328,
-    "publisher": "jack",
-    "publish_date": "34",
-    "cover_state": "good",
-    "genre": "mybook"
+    "id": 442,
+    "publisher": "x",
+    "publish_date": "x",
+    "cover_state": "x",
+    "label_title": "x",
+    "label_color": "x"
+  },
+  {
+    "id": 65,
+    "publisher": "rr",
+    "publish_date": "rr",
+    "cover_state": "rr",
+    "label_title": "rr",
+    "label_color": "rr"
+  },
+  {
+    "id": 235,
+    "publisher": "xx",
+    "publish_date": "xx",
+    "cover_state": "xx",
+    "label_title": "xx",
+    "label_color": "xx"
   }
 ]

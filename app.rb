@@ -11,7 +11,7 @@ class App
   include GenreModule
   include LoadData
   include BookModule
-include LableModule
+  include LableModule
 
   def initialize
     @books = []
@@ -59,6 +59,8 @@ include LableModule
   def start
     load_music
     load_genre
+    load_book
+    load_label
     options
     choice = gets.chomp.to_i
     choose_an_option(choice)
