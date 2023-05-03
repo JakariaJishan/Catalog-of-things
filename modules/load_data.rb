@@ -54,7 +54,6 @@ module LoadData
       data = JSON.parse(json_string)
       @labels = data.map do |g|
         Label.new(g['title'], g['color'])
-        
       end
     else
       File.write('./data/labels.json', JSON.generate([])) unless File.exist?('./data/labels.json')
