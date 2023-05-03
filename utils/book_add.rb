@@ -1,21 +1,20 @@
 require_relative '../app'
 
 def list_all_books
-    @books.each do |x|
-        puts 'all list'
-        puts x.empty?
-    end
+  @books.each do |x|
+    puts 'all list'
+    puts x.empty?
+  end
 
-    start
+  start
 end
 
 def list_all_labels
-
-    puts 'all labels'
-    start
+  puts 'all labels'
+  start
 end
 
 def add_book
-    puts 'books'
-    start
+  puts 'books'
+  start
 end
