@@ -6,11 +6,11 @@ module LoadData
       json_string = File.read('./data/music_albums.json')
       data = JSON.parse(json_string)
       @albums = data.map do |a|
-        MusicAlbum.new(a['on_spotify'], a['publish_date'], a['album_name'] )
+        MusicAlbum.new(a['on_spotify'], a['publish_date'], a['album_name'])
       end
     else
       File.write('./data/music_albums.json', JSON.generate([])) unless File.exist?('./data/music_albums.json')
-  
+
     end
   end
 
@@ -23,7 +23,7 @@ module LoadData
       end
     else
       File.write('./data/genres.json', JSON.generate([])) unless File.exist?('./data/genres.json')
-  
+
     end
   end
 end

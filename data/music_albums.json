@@ -1,0 +1,14 @@
+[
+  {
+    "id": 706,
+    "on_spotify": true,
+    "publish_date": "1982-05-26",
+    "album_name": "thriller"
+  },
+  {
+    "id": 584,
+    "on_spotify": false,
+    "publish_date": "2000-02-16",
+    "album_name": "california"
+  }
+]
