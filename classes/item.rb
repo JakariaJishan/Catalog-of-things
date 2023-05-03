@@ -18,7 +18,5 @@ class Item
 
   def can_be_archived?
     (Date.today - Date.parse(@publish_date)).to_i > 365 * 10
-    # new_date = Date.today - (10 * 365)
-    # return true if date <= new_date
   end
 end
