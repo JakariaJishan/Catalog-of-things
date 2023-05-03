@@ -1,3 +1,4 @@
+require 'pry'
 require_relative '../app'
 
 module MusicAlbumModule
@@ -12,7 +13,9 @@ module MusicAlbumModule
     name = gets.chomp
     genre = Genre.new(name)
     music_album = MusicAlbum.new(on_spotify, publish_date, album_name)
+    music_album.genre = genre
     @albums << music_album
+    puts @albums.inspect
     @genres << genre
     save_genre_music_data
     puts 'Music album added successfully'
@@ -26,7 +29,8 @@ module MusicAlbumModule
         id: a.id,
         on_spotify: a.on_spotify,
         publish_date: a.publish_date,
-        album_name: a.album_name
+        album_name: a.album_name,
+        genre: a.genre.name
       }
     end
     File.write('./data/music_albums.json', JSON.pretty_generate(music_albums_data))
