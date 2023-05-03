@@ -16,8 +16,8 @@ module MusicAlbumModule
     @albums << music_album
     @genres << genre
     genre_name = genre ? genre.name : nil
-    File.write('music_albums.json', JSON.pretty_generate(@albums.map { |a| { id: a.id, genre: genre_name, on_spotify: a.on_spotify, publish_date: a.publish_date, album_name: a.album_name } }))
-    File.write('genres.json', JSON.pretty_generate(@genres.map { |g| { id: g.id, name: g.name } }))
+    File.write('./data/music_albums.json', JSON.pretty_generate(@albums.map { |a| { id: a.id, genre: genre_name, on_spotify: a.on_spotify, publish_date: a.publish_date, album_name: a.album_name } }))
+    File.write('./data/genres.json', JSON.pretty_generate(@genres.map { |g| { id: g.id, name: g.name } }))
     puts "Music album added successfully"  
     puts ''
     start
