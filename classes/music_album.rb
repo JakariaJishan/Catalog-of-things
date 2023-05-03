@@ -7,7 +7,6 @@ class MusicAlbum < Item
     super(publish_date, archived: archived)
     @on_spotify = on_spotify
     @album_name = album_name
-    
   end
 
   private
