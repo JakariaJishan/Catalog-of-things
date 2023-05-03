@@ -1,4 +1,3 @@
-
 require './classes/music_album'
 require './classes/genre'
 require './modules/music_module'
