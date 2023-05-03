@@ -25,8 +25,25 @@ module BookModule
         @books << book
 
         @labels << label
-
+        save_book_label_data
         puts "Book added successfully..."
         start
     end
+
+    def save_book_label_data
+        book_data = @books.map do |a|
+
+          {
+            id: a.id,
+            publisher: a.publisher,
+            publish_date: a.publish_date,
+            cover_state: a.cover_state,
+            genre: a.label.title
+          }
+        end
+        File.write('./data/books.json', JSON.pretty_generate(book_data))
+        
+        label_data = @labels.map { |g| { id: g.id, title: g.title } }
+        File.write('./data/labels.json', JSON.pretty_generate(label_data))
+      end
 end

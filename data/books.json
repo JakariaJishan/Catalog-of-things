@@ -1,0 +1,16 @@
+[
+  {
+    "id": 576,
+    "publisher": "ads",
+    "publish_date": "23",
+    "cover_state": "good",
+    "genre": "ads"
+  },
+  {
+    "id": 328,
+    "publisher": "jack",
+    "publish_date": "34",
+    "cover_state": "good",
+    "genre": "mybook"
+  }
+]
