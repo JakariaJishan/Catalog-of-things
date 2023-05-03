@@ -2,18 +2,19 @@ require './classes/music_album'
 require './classes/genre'
 require './modules/music_module'
 require './modules/genre_module'
+require './modules/book_module'
 require './modules/load_data'
 
 class App
   include MusicAlbumModule
   include GenreModule
   include LoadData
+  include BookModule
 
   def initialize
     @books = []
     @albums = []
     @genres = []
-    @labels = []
   end
 
   def options
