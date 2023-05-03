@@ -24,7 +24,7 @@ module BookModule
         book.label = label
         @books << book
 
-        puts @books.inspect
+        @labels << label
 
         puts "Book added successfully..."
         start

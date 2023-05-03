@@ -3,6 +3,7 @@ require './classes/genre'
 require './modules/music_module'
 require './modules/genre_module'
 require './modules/book_module'
+require './modules/label_module'
 require './modules/load_data'
 
 class App
@@ -10,11 +11,13 @@ class App
   include GenreModule
   include LoadData
   include BookModule
+include LableModule
 
   def initialize
     @books = []
     @albums = []
     @genres = []
+    @labels = []
   end
 
   def options
