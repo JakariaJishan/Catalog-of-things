@@ -1,7 +1,15 @@
-require_relative './utils/book_add'
 
+require './classes/music_album'
+require './classes/genre'
+require './modules/music_module'
+require './modules/genre_module'
+require './modules/load_data'
 
 class App
+  include MusicAlbumModule
+  include GenreModule
+  include LoadData
+
   def initialize
     @books = []
     @albums = []
@@ -26,7 +34,7 @@ class App
     when 1
       list_all_books
     when 2
-      list_albums
+      list_music_albums
     when 3
       list_genres
     when 4
@@ -34,7 +42,7 @@ class App
     when 5
       add_book
     when 6
-      add_album
+      add_music_album
     when 7
       puts 'Thank you for using this app!'
     else
@@ -46,6 +54,8 @@ class App
   # rubocop:enable Metrics/CyclomaticComplexity
 
   def start
+    load_music
+    load_genre
     options
     choice = gets.chomp.to_i
     choose_an_option(choice)
