@@ -15,11 +15,26 @@ module GameModule
         @games << game
 
         puts "Game added successfully✅"
-
+        save_game_data
+        
         puts ''
 
         start
     end
+
+    def save_game_data
+        game_data = @games.map do |a|
+          {
+            id: a.id,
+            multiplayer: a.multiplayer,
+            last_played_at : a.last_played_at,
+            publish_date: a.publish_date
+          }
+        end
+        File.write('./data/games.json', JSON.pretty_generate(game_data))
+        # label_data = @labels.map { |g| { id: g.id, title: g.title, color: g.color } }
+        # File.write('./data/labels.json', JSON.pretty_generate(label_data))
+      end
 
     def list_all_games
         if @games.empty?
