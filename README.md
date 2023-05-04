@@ -1,37 +1,28 @@
-<a name="readme-top"></a>
-
-<div align="center">
-   <h1><b>Ruby Template</b></h1>
-</div>
-
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
   - [Install](#install)
+  - [Create database](#create-database)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+- [🖼️ UML class diagram](#UML-class-diagram)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-<!-- PROJECT DESCRIPTION -->
+# 📖 Catalog of things <a name="about-project"></a>
 
-# 📖 Ruby Template <a name="about-project"></a>
-
-**Ruby Template** is a Ruby app that allows users to manage ... and ... .
+**Catalog of things** creates a console app that helps users keep track of their books, music albums, movies, and games. The program is based on the UML class diagram. The data is stored in JSON files, and a database is configured with a table structure analogous to the program's class structure..
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -55,15 +46,14 @@
 <details>
 <summary>Database</summary>
   <ul>
-    <li>N/A</li>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
 
-<!-- Features -->
-
 ### Key Features <a name="key-features"></a>
 
-- **.. can be created as .. or ..**
+- Add new music albums
+- Add new books
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,8 +65,9 @@ To get a local copy of this project and run it in your computer, follow these st
 
 In order to run this project you need:
 
-- A working computer.
-- Connection to internet.
+- [Ruby](https://www.ruby-lang.org/en/) installed and running
+- [PostgreSQL server](https://www.postgresql.org/download/) installed and running
+- [psql](https://www.postgresql.org/docs/current/app-psql.html) installed
 
 ### Setup
 
@@ -86,7 +77,9 @@ Clone this repository in the desired folder:
 
 ```
 cd my-folder
-git clone https://github.com/JakariaJishan/....git
+git clone https://github.com/JakariaJishan/Catalog-of-things.git
+cd catalog-of-things
+code .
 ```
 
 ### Install
@@ -94,10 +87,35 @@ git clone https://github.com/JakariaJishan/....git
 To install this project:
 
 ```
-cd repo_name
-code .
-bundler install
+gem install ruby
+gem install rspec
+bundle install
 ```
+
+### Create database
+
+1. Connect to your PostgreSQL server with `psql`
+```
+> psql
+postgres=#
+```
+
+2. Create the database `catalog_things`
+```
+postgres=# CREATE DATABASE catalog_things;
+CREATE DATABASE
+```
+
+3. Connect to your database catalog_things. Inside your current session do:
+```
+postgres=# \c catalog_things
+You are now connected to database "catalog_things" as user "postgres".
+catalog_things=#
+```
+
+That's it! Congratulations, you have created your database and connected to it. Next, we will add a table.
+
+- Use [schema.sql](./sql/schema.sql) to create all tables.
 
 ### Usage
 
@@ -112,31 +130,37 @@ ruby main.rb
 To run the project tests, execute the following command:
 
 ```
-N/A
+rspec spec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
+## UML class diagram
+![Schema Diagram soom](./img/UML_class_diagram.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Jakria Jishan**
+👤 **Jakaria Jishan**
 
-- GitHub: [@jakaria](https://github.com/jakariajishan)
+- GitHub: [@jakaria](https://github.com/JakariaJishan)
+- Twitter: [@jakaria](https://twitter.com/jakariajishan)
+- LinkedIn: [jakaria](https://www.linkedin.com/in/jakariajishan/)
+
+👤 **Vanessa Oliveros Padron**
+
+- GitHub: [@vvoo21](https://github.com/vvoo21)
+- Twitter: [@vaneoliverosp](https://twitter.com/vaneoliverosp)
+- LinkedIn: [vaneoliverosp](https://www.linkedin.com/in/vaneoliverosp/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add new books.**
-- [ ] **Save records of who borrowed a given book and when.**
+- Insert new data
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -146,36 +170,23 @@ Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
-
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project feel free to frok it and use it as you need.
+Give a start if you like this project!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for the information provided to build this project.
+- I would like to thank the Microverse program!
+- I would like to thank my coding partner to aid this project's development.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-- **Can I use the project for any purpose?**
-
-  - Yes, you can use this files for anything you need.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
