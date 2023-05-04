@@ -1,0 +1,26 @@
+[
+  {
+    "id": 171,
+    "multiplayer": true,
+    "last_played_at": "23-23-23",
+    "publish_date": "22-22-22",
+    "first_name": "jack",
+    "last_name": "joe"
+  },
+  {
+    "id": 808,
+    "multiplayer": false,
+    "last_played_at": "33-33-33",
+    "publish_date": "44-44-44",
+    "first_name": "jishan",
+    "last_name": "jakaria"
+  },
+  {
+    "id": 293,
+    "multiplayer": true,
+    "last_played_at": "11-11-11",
+    "publish_date": "505-50-50",
+    "first_name": "jose",
+    "last_name": "phillips"
+  }
+]
