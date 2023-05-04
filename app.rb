@@ -18,6 +18,7 @@ class App
     @albums = []
     @genres = []
     @labels = []
+    @authors = []
   end
 
   def options
