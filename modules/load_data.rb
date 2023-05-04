@@ -76,4 +76,17 @@ module LoadData
 
     end
   end
+
+  def load_author
+    if File.exist?('./data/authors.json') && !File.empty?('./data/authors.json')
+      json_string = File.read('./data/authors.json')
+      data = JSON.parse(json_string)
+      @authors = data.map do |g|
+        Author.new(g['first_name'], g['last_name'])
+      end
+    else
+      File.write('./data/authors.json', JSON.generate([])) unless File.exist?('./data/authors.json')
+
+    end
+  end
 end

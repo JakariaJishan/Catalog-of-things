@@ -1,6 +1,12 @@
 module GameModule
 
     def add_game
+        puts 'Enter your first name: '
+        first_name = gets.chomp
+
+        puts 'Enter your last name: '
+        last_name = gets.chomp
+
         puts 'Multiplayer available? y/n : '
         multiplayer = gets.chomp.downcase[0] == 'y'
 
@@ -11,9 +17,11 @@ module GameModule
         publish_date = gets.chomp
 
         game = Game.new(multiplayer, last_played_at, publish_date)
+        author = Author.new(first_name, last_name)
 
+        game.author = author
         @games << game
-
+        @authors << author
         puts "Game added successfully✅"
         save_game_data
 
@@ -27,13 +35,15 @@ module GameModule
           {
             id: a.id,
             multiplayer: a.multiplayer,
-            last_played_at : a.last_played_at,
-            publish_date: a.publish_date
+            last_played_at: a.last_played_at,
+            publish_date: a.publish_date,
+            first_name: a.author.first_name,
+            last_name: a.author.last_name,
           }
         end
         File.write('./data/games.json', JSON.pretty_generate(game_data))
-        # label_data = @labels.map { |g| { id: g.id, title: g.title, color: g.color } }
-        # File.write('./data/labels.json', JSON.pretty_generate(label_data))
+        author_data = @authors.map { |g| { id: g.id, first_name: g.first_name, last_name: g.last_name } }
+        File.write('./data/authors.json', JSON.pretty_generate(author_data))
       end
 
     def list_all_games

@@ -1,7 +1,7 @@
 require_relative '../app'
 require 'set'
 
-module GenreModule
+module AuthorModule
   def list_author
     if @authors.empty?
       puts 'The list is empty'
