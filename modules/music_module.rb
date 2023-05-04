@@ -15,7 +15,6 @@ module MusicAlbumModule
     music_album = MusicAlbum.new(on_spotify, publish_date, album_name)
     music_album.genre = genre
     @albums << music_album
-    puts @albums.inspect
     @genres << genre
     save_genre_music_data
     puts 'Music album added successfully'

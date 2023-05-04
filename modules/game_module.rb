@@ -55,7 +55,7 @@ module GameModule
       start
     end
     @games.each do |game|
-      puts "multiplayer: #{game.multiplayer}"
+      puts "the last game of #{game.author.first_name} #{game.author.last_name} was played at: #{game.last_played_at}"
     end
     puts ''
     start
