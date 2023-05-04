@@ -21,6 +21,7 @@ include GameModule
     @genres = []
     @labels = []
     @games = []
+    @authors = []
   end
 
   def options
