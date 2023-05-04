@@ -35,3 +35,9 @@ CREATE TABLE books(
   cover_state VARCHAR(100),
   item_id INTEGER REFERENCES items(id)
 ) INHERITS (items);
+
+CREATE TABLE games(
+  multiplayer BOOLEAN,
+  last_played_at DATE,
+ item_id INTEGER REFERENCES items(id)
+) INHERITS (items);

@@ -68,6 +68,7 @@ include GameModule
     load_genre
     load_book
     load_label
+    load_game
     options
     choice = gets.chomp.to_i
     choose_an_option(choice)

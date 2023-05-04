@@ -16,7 +16,7 @@ module GameModule
 
         puts "Game added successfully✅"
         save_game_data
-        
+
         puts ''
 
         start

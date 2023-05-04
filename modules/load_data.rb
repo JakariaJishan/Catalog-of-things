@@ -60,4 +60,20 @@ module LoadData
 
     end
   end
+
+  def load_game
+    if File.exist?('./data/games.json') && !File.empty?('./data/games.json')
+      json_string = File.read('./data/games.json')
+      data = JSON.parse(json_string)
+      @games = data.map do |a|
+        author = Author.new(a['first_name'], a['last_name'])
+        game = Game.new(a['multiplayer'], a['last_played_at'], a['publish_date'])
+        book.author = author
+        game
+      end
+    else
+      File.write('./data/games.json', JSON.generate([])) unless File.exist?('./data/games.json')
+
+    end
+  end
 end
