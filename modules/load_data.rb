@@ -68,7 +68,7 @@ module LoadData
       @games = data.map do |a|
         author = Author.new(a['first_name'], a['last_name'])
         game = Game.new(a['multiplayer'], a['last_played_at'], a['publish_date'])
-        book.author = author
+        game.author = author
         game
       end
     else

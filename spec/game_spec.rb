@@ -11,13 +11,13 @@ RSpec.describe Game do
 
   describe '#can_be_archived?' do
     it 'returns false when last played at older than 2yr' do
-      game = Game.new('jack publisher', '2023-02-02', '2023-02-02')
+      game = Game.new('jack publisher', '2018-02-02', '2023-02-02')
       expect(game.send(:can_be_archived?)).to eq(false)
     end
 
     it 'returns true when last played at older than 2yr' do
-      book = Book.new('jack publisher', '2023-02-02' , '2023-02-02')
-      expect(book.send(:can_be_archived?)).to eq(true)
+      game = Game.new('jack publisher', '2020-02-02', '2013-02-02')
+      expect(game.send(:can_be_archived?)).to eq(true)
     end
   end
 end

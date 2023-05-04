@@ -41,6 +41,7 @@ class App
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/MethodLength
   def choose_an_option(choice)
     case choice
     when 1
@@ -59,7 +60,7 @@ class App
       add_book
     when 8
       add_music_album
-    when 9 
+    when 9
       add_game
     when 10
       puts 'Thank you for using this app!'
@@ -69,6 +70,7 @@ class App
       start
     end
   end
+  # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/CyclomaticComplexity
 
   def start

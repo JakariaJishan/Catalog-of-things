@@ -10,7 +10,7 @@ class Game < Item
   end
 
   def can_be_archived?
-    return true if super &&  (Date.today - Date.parse(@last_played_at)).to_i > 365 * 2
+    return true if super && (Date.today - Date.parse(@last_played_at)).to_i > 365 * 2
 
     false
   end
