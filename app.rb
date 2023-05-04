@@ -2,12 +2,16 @@ require './classes/music_album'
 require './classes/genre'
 require './modules/music_module'
 require './modules/genre_module'
+require './modules/book_module'
+require './modules/label_module'
 require './modules/load_data'
 
 class App
   include MusicAlbumModule
   include GenreModule
   include LoadData
+  include BookModule
+  include LableModule
 
   def initialize
     @books = []
@@ -31,13 +35,13 @@ class App
   def choose_an_option(choice)
     case choice
     when 1
-      list_books
+      list_all_books
     when 2
       list_music_albums
     when 3
       list_genres
     when 4
-      list_labels
+      list_all_labels
     when 5
       add_book
     when 6
@@ -55,6 +59,8 @@ class App
   def start
     load_music
     load_genre
+    load_book
+    load_label
     options
     choice = gets.chomp.to_i
     choose_an_option(choice)
