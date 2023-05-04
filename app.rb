@@ -3,6 +3,7 @@ require './classes/genre'
 require './modules/music_module'
 require './modules/genre_module'
 require './modules/book_module'
+require './modules/game_module'
 require './modules/label_module'
 require './modules/load_data'
 
@@ -12,12 +13,14 @@ class App
   include LoadData
   include BookModule
   include LableModule
+include GameModule
 
   def initialize
     @books = []
     @albums = []
     @genres = []
     @labels = []
+    @games = []
   end
 
   def options
@@ -43,10 +46,14 @@ class App
     when 4
       list_all_labels
     when 5
-      add_book
+      list_all_games
     when 6
-      add_music_album
+      add_book
     when 7
+      add_music_album
+    when 8 
+      add_game
+    when 9
       puts 'Thank you for using this app!'
     else
       puts 'Invalid choice.'
